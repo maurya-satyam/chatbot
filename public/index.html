@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section id="login" class="card">
+      <h1>💬 Chat Together</h1>
+      <p>Connect and chat in real time.</p>
+
+      <form id="join-form">
+        <input id="username" placeholder="Enter your name"
+               maxlength="30" required>
+        <input id="room" placeholder="Enter room code"
+               maxlength="30" required>
+        <button type="submit">Join Chat</button>
+      </form>
+    </section>
+
+    <section id="chat" class="card" hidden>
+      <header>
+        <div>
+          <h2>Chat Room</h2>
+          <p id="room-name"></p>
+        </div>
+        <button id="leave" class="leave">Leave</button>
+      </header>
+
+      <div id="messages" aria-live="polite"></div>
+      <p id="status"></p>
+
+      <form id="message-form">
+        <input id="message" placeholder="Type a message..."
+               maxlength="1000" autocomplete="off" required>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
